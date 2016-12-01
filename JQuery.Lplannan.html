@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <style>
+        html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html{
+    background:white;
+}
+body{
+    font-family:  'Aref Ruqaa', serif;
+    color: rebeccapurple;
+}
+div.item{
+    margin:48px;
+    position:relative;
+}
+div.square{
+    margin-top:24px;
+    margin-right:24px;
+    width:600px;
+    height:100px;
+    background:GhostWhite;
+    position:relative;
+}
+h1{
+    font-size:24px;
+}
+div{
+
+}
+a {
+    color:DeepSkyBlue;
+}
+.long-shadow {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 25px;
+    border: none;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+pre {
+    font-family: 'Aref Ruqaa';
+    background-color: GhostWhite;
+    color: DarkGrey;
+    padding: 20px;
+
+        }
+        h1 {
+    text-align: center;
+}
+                h2 {
+    text-align: center;
+}
+    </style>
+    <head>
+        <script>
+    $document.ready(function(){
+    "use strict";
+    $("#myList li:first").on("mouseover", function(evt){
+         $(this).css("color","green");
+    });
+        $("#myList li:nth-child(2)").on("click", swapMe);
+         $("#myList li:nth-child(3)").click(myFunction2);
+    $("#myList li:nth-child(4)").on("click", myFunction3);
+    $("#myList li:nth-child(5)").one("click", function(evt) {
+        myFunction4("#square4");
+                                   });
+    $("#square4").hide();
+});
+        function swapMe() {
+            var tempText = $("#myList li:nth-child(3)").text();
+             $("#myList li:nth-child(3)").text($("#myList li:nth-child(4)").text());
+              $("#myList li:nth-child(4)").text(tempText);
+};
+        function myFunction2() {
+               $(this).css({"text-shadow":"4px 4px #FFFF00","font-size":"300%"});
+}
+function myFunction3() {
+        $(this).toggleClass("long-shadow");
+};
+function myFunction4(myObject) {
+    $(myObject).slideDown()
+        .delay(2000)
+        .animate({left: '+=700px'})
+        .animate({top: '-=400px',
+                  height: '500px'}, "slow");
+        }
+    </script>
+        <meta charset="utf-8">
+        <meta name="description" content="A page for exploring basic HTML documents">
+        <title>jQuery Attempt</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="myscript.js"></script>
+    </head>
+    <body>
+        <div class="item">
+            <h1>We're all mad here.</h1>
+            <h2>Mad Hatter</h2>
+        </div>
+        <div class="item">
+            <ol id="myList">
+                <li>box one.</li>
+                <li>box two.</li>
+                <li>box three.</li>
+                <li>box four.</li>
+                <li>box five.</li>
+            </ol>
+        </div>
+        <div class="item" id="squaresDiv">
+            <div class="square" id="square1">Text</div>
+            <div class="square" id="square2"></div>
+            <div class="square" id="square3"></div>
+            <div class="square" id="square4"></div>
+        </div>
+        <div class="item">
+            <br>
+            <br>
+            <pre>
+               Text.
+            </pre>
+        </div>
+    </body>
+</html>
